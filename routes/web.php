@@ -8,9 +8,9 @@ Route::get('/contato', [\App\Http\Controllers\ContatoController::class, 'contato
 Route::get('/login', function() {return 'Login';})->name('site.login');
 
 Route::prefix('/app')->group(function() { // função de callback que agrupa as rotas que estão dentro do prefixo, tornando-as dependentes do mesmo para serem acessadas.
-    Route::get('/clientes', function() {return 'Clientes';})->name('app.clientes');
-    Route::get('/fornecedores', function() {return 'Fornecedores';})->name('app.fornecedores');
-    Route::get('/produtos', function() {return 'Produtos';})->name('app.produtos');
+    Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'clientes'])->name('app.clientes');
+    Route::get('/fornecedores', [\App\Http\Controllers\FornecedorController::class, 'fornecedor'])->name('app.fornecedor');
+    Route::get('/produtos', [\App\Http\Controllers\ProdutosController::class, 'produtos'])->name('app.produtos');
 });
 
 Route::get('/teste/{p1}/{p2}', [\App\Http\Controllers\TesteController::class, 'teste'])->name('teste');
