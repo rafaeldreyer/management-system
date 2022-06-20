@@ -1,5 +1,5 @@
-Install project
+Para instalar o projeto
 
 - terminal: composer install
-- configure the .env
+- configurar o .env
 - terminal: php artisan key:generate
